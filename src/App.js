@@ -2,6 +2,8 @@ import React from "react";
 import TodoList from "./components/TodoComponents/TodoList";
 import TodoForm from "./components/TodoComponents/TodoForm";
 import "./App.css";
+import Clock from "./components/Clock";
+
 
 class App extends React.Component {
   constructor() {
@@ -66,9 +68,8 @@ clearCompletedTodo = clearList => {
     return (
       <div className="container">
         <h2 className="header">Welcome to your Todo App!</h2>
+      <Clock className="clock" />
       <div>
-
-        
 
         <TodoForm
           value={this.state.todo}
