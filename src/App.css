@@ -1,7 +1,7 @@
 
 
 .container {
-  width: 350px;
+  width: 320px;
   margin: 20px auto;
   border: 5px solid black;
   background: rgb(56, 56, 56);
@@ -65,7 +65,7 @@ img{
   align-items: flex-end;
   width: 90%;
   margin: auto;
-  font-size: 200%;
+  font-size: 30px;
   color:rgb(56, 56, 56);
  
 }
@@ -79,5 +79,5 @@ img{
 
 .App-clock{
     text-align: center;
-    font-size: 20px
+    font-size: 30px
 }
