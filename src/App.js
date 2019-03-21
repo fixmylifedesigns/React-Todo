@@ -1,6 +1,7 @@
 import React from "react";
 import TodoList from "./components/TodoComponents/TodoList";
 import TodoForm from "./components/TodoComponents/TodoForm";
+import "./App.css";
 
 class App extends React.Component {
   constructor() {
@@ -10,7 +11,7 @@ class App extends React.Component {
         //creating a tast that will appear in the page
         {
           //task name
-          task: "clean bike",
+          task: "Clean Bike",
           // task id
           id: 1,
           //set to false so it remains on the page until you click on it and clear complete
@@ -38,10 +39,10 @@ class App extends React.Component {
     });
   };
 
-  changeTodo = event =>
-    this.setState({ [event.target.name]: event.target.value });
+  changeTodo = apple =>
+    this.setState({ [apple.target.name]: apple.target.value });
 
-  toggleTodoComplete = id => {
+  toggleTodoCompleted = id => {
     let todos = this.state.todos.slice();
     todos = todos.map(todo => {
       if (todo.id === id) {
@@ -55,26 +56,29 @@ class App extends React.Component {
     this.setState({ todos });
   };
 
-clearCompletedTodo = event => {
-  event.preventDefault();
-  let todos = this.state.todosfilter(todo => !todo.completed);
+clearCompletedTodo = clearList => {
+  clearList.preventDefault();
+  let todos = this.state.todos.filter(todo => !todo.completed);
   this.setState({ todos });
 };
 
   render() {
     return (
+      <div className="container">
+        <h2 className="header">Welcome to your Todo App!</h2>
       <div>
-        <h2>Welcome to your Todo App!</h2>
-      <div>
-        <TodoList
-          handleToggleComplete={this.toggleTodoComplete}
-          todos={this.state.todos}
-        />
+
+        
+
         <TodoForm
           value={this.state.todo}
           handleTodoChange={this.changeTodo}
           handleAddTodo={this.addTodo}
-          handleClearTodos={this.clearCompletedTodos}
+          handleClearTodo={this.clearCompletedTodo}
+        />
+        <TodoList
+          handleToggleComplete={this.toggleTodoCompleted}
+          todos={this.state.todos}
         />
       </div>
       </div>

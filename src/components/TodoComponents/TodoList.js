@@ -47,7 +47,7 @@ const TodoList = props => {
         //   here we are creating a function for controlling the task
         <Todo
           // we add the toggle which would switch it to complete when clicked
-          handleToggleComplete={props.handleToggleComplete}
+          handleToggleCompleted={props.handleToggleComplete}
           //git it a unique id
           key={todo.id}
           //the name of the task

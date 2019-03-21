@@ -13,12 +13,14 @@ import React from "react";
 const Todo = props => {
   return (
     // div which sets a toggle onclick for the task and style line through when clicked
-    <div
+    <div className="list">
+    <li className="task"
       style={props.todo.completed ? { textDecoration: "line-through" } : null}
-      onClick={() => props.handleToggleComplete(props.todo.id)}
+      onClick={() => props.handleToggleCompleted(props.todo.id)}
     >
       {/* name of task */}
       {props.todo.task}
+    </li>
     </div>
   );
 };
